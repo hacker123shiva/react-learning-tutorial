@@ -10,6 +10,109 @@ The Document Object Model (DOM) is a programming interface for web documents. It
 - The document is structured hierarchically (like a tree) where `document` is the root.
 - DOM elements can be selected, modified, and manipulated using JavaScript.
 
+
+## 1. Selecting Elements
+To manipulate the DOM, we must first select elements.
+
+```javascript
+// Selecting an element by ID
+document.getElementById('id');
+
+// Selecting an element by class
+document.querySelector('.class');
+
+// Selecting elements by tag
+document.getElementsByTagName('tag');
+
+// Selecting elements by class
+document.getElementsByClassName('class');
+
+// Selecting multiple elements using querySelectorAll
+document.querySelectorAll('selector');
+```
+
+---
+
+## 2. Modifying Elements
+Once selected, we can modify elements.
+
+```javascript
+// Changing inner text
+element.innerText = 'New Text';
+
+// Changing inner HTML
+element.innerHTML = '<b>Bold Text</b>';
+
+// Modifying styles
+element.style.color = 'red';
+
+// Setting attributes
+element.setAttribute('class', 'newClass');
+```
+
+---
+
+## 3. Creating and Removing Elements
+New elements can be dynamically created and removed.
+
+```javascript
+// Creating a new element
+let newElement = document.createElement('div');
+newElement.innerText = 'New Element';
+parentElement.appendChild(newElement);
+
+// Removing an element
+parentElement.removeChild(existingElement);
+```
+
+---
+
+## 4. Event Handling
+Adding event listeners to handle user interactions.
+
+```javascript
+// Adding an event listener
+element.addEventListener('click', function() {
+    alert('Element clicked!');
+});
+```
+
+---
+
+## 5. Traversing the DOM
+Navigate through parent and child elements.
+
+```javascript
+// Accessing parent element
+element.parentElement;
+
+// Accessing child elements
+element.children;
+element.firstElementChild;
+element.lastElementChild;
+
+// Accessing sibling elements
+element.nextElementSibling;
+element.previousElementSibling;
+```
+
+---
+
+## 6. Class and Attribute Manipulation
+Modify classes and attributes dynamically.
+
+```javascript
+// Adding and removing classes
+element.classList.add('newClass');
+element.classList.remove('oldClass');
+element.classList.toggle('toggleClass');
+
+// Modifying attributes
+element.setAttribute('data-id', '123');
+element.getAttribute('href');
+element.removeAttribute('disabled');
+```
+
 ### **Example & Output:**
 ```html
 <!DOCTYPE html>
@@ -27,18 +130,6 @@ The Document Object Model (DOM) is a programming interface for web documents. It
 ```
 **Output:** Console displays: `DOM Example`
 
-## Selecting Elements
-
-### **Definition:**
-Selecting elements in the DOM means retrieving references to specific HTML elements so they can be manipulated.
-
-### **Theory:**
-JavaScript provides several methods to select elements in the DOM:
-1. **`document.getElementById("id")`** - Selects an element by its ID.
-2. **`document.getElementsByClassName("class")`** - Selects elements by class name.
-3. **`document.getElementsByTagName("tag")`** - Selects elements by tag name.
-4. **`document.querySelector("selector")`** - Selects the first matching element.
-5. **`document.querySelectorAll("selector")`** - Selects all matching elements.
 
 ### **Example & Output:**
 ```html
@@ -78,7 +169,6 @@ Modifying HTML & CSS means dynamically changing the content, structure, or style
 </script>
 ```
 **Output:** When the button is clicked, the paragraph turns blue with a font size of 20px.
-
 
 ## Event Bubbling
 
